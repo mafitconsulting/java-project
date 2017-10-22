@@ -44,7 +44,7 @@ pipeline {
          label 'CentOS'
        }
       steps {
-          sh "wget http://fieldhousem3.mylabserver.com/retangles/all/rectangle_${env.BUILD_NUMBER}.jar"
+          sh "wget http://fieldhousem3.mylabserver.com/rectangles/all/rectangle_${env.BUILD_NUMBER}.jar"
           sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 3 4"
       }
      }
@@ -53,7 +53,7 @@ pipeline {
              docker 'openjdk:8u121-jre'
          }
          steps {
-            sh "wget http://fieldhousem3.mylabserver.com/rectables/all/rectangle_${env.BUILD_NUMBER}.jar"
+            sh "wget http://fieldhousem3.mylabserver.com/rectangles/all/rectangle_${env.BUILD_NUMBER}.jar"
             sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 3 4"
         }
      }
