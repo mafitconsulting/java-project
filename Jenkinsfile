@@ -27,6 +27,17 @@ pipeline {
            sayHello 'Awesome Student'
         }
      }
+     stage('Git Information') {
+        agent any
+     
+        steps {
+           echo "My branch name is: ${env.BRANCH_NAME}"
+           script {
+              def myLib = new mafitconsulting.git.gitStuff();
+            
+              echo "My commit: ${myLib.gitCommit("${env.WORKSPACE}/.git")}"
+        }
+     }
 
      stage('unit test') {
        agent {
