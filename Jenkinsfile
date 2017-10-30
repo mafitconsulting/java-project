@@ -36,6 +36,7 @@ pipeline {
               def myLib = new mafitconsulting.git.gitStuff();
             
               echo "My commit: ${myLib.gitCommit("${env.WORKSPACE}/.git")}"
+           }
         }
      }
 
